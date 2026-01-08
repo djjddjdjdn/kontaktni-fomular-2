@@ -226,27 +226,28 @@ button:active {
 <body>
 
 <div class="contact-card">
-    <h2>Kontaktuj nás</h2>
-    <p>Napiš nám a ozveme se co nejdříve.</p>
+    <h2>Kontaktní formulář</h2>
+    <p>Napište sem cokoliv...</p>
 
-    <form id="contactForm">
-        <div class="form-group">
-            <label>Jméno</label>
-            <input type="text" id="name" placeholder="Tvé jméno">
-        </div>
+    <form id="contactForm" action="https://formspree.io/f/xykzrvnv" method="POST">
+    <div class="form-group">
+        <label>Jméno</label>
+        <input type="text" id="name" name="name" placeholder="Tvé jméno" required>
+    </div>
 
-        <div class="form-group">
-            <label>Email</label>
-            <input type="email" id="email" placeholder="tvuj@email.cz">
-        </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="email" name="email" placeholder="tvuj@email.cz" required>
+    </div>
 
-        <div class="form-group">
-            <label>Zpráva</label>
-            <textarea id="message" placeholder="Napiš nám zprávu..."></textarea>
-        </div>
+    <div class="form-group">
+        <label>Zpráva</label>
+        <textarea id="message" name="message" placeholder="Napiš nám zprávu..." required></textarea>
+    </div>
 
-        <button type="submit">Odeslat zprávu</button>
-    </form>
+    <button type="submit">Odeslat zprávu</button>
+</form>
+
 </div>
 
 <script>
@@ -261,9 +262,7 @@ email.addEventListener("input", () => {
     }
 });
 
-form.addEventListener("submit", e => {
-    e.preventDefault(); // Bubble / backend si napojíš tady
-});
+
 </script>
 
 </body>
